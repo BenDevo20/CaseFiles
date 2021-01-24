@@ -11,7 +11,7 @@ from scipy import stats
 
 # correlation between price and sales count?
 
-df_all = pd.read_csv('KioskImpressions.csv')
+df_all = pd.read_csv('UnitSales.csv')
 serials = df_all['Scancode'].unique()
 org = df_all['OrgAlias'].unique()
 loc = df_all['LocAlias'].unique()
@@ -63,4 +63,5 @@ for i, group in df_all.groupby('OrgAlias'):
             print(str(i) + ', ' + 'Item ' + str(prod) + ': ' + \
                   str(group.loc[group['Scancode']==prod]['SalesCount'].sum()))
             # Proportion of sales by org
+
 
